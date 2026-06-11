@@ -1,0 +1,46 @@
+@font-face {
+    font-family: fontinha;
+    src: url(CookieRun\ Regular.ttf);
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes anima{
+   0%{
+      transform: scale(1);
+   }
+   100%{
+      transform: scale(1.2);
+   }
+  
+}
+ /*no keyframe é definido o padrão da animação, neste caso, o objeto sairá do tamanho incial, ou 1, e aumentará até o tamanho 2.*/
+button:hover{
+   animation-name:anima;
+   animation-duration: 0.5s;
+   animation-timing-function:ease-in-out;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+} /*Aqui foi utilizada a animação criada anteriormente no @keyframe anima. Aqui são definidas a duração, qual animação será aplicada, como a animação irá funcionar, neste caso, ease-in-out, que significa que o objeto vai realizar a animação uma vez normalmente e outra vez o contrário, além de quanto irão durar os ciclos (aqui, infinitos), e por fim se será alternado ou em reverso*/
+@keyframes roda {
+      from{
+         transform: rotate(0deg);
+      }
+      to {
+         transform: rotate(360deg);
+      }
+        /*no keyframe é definido o padrão da animação, neste caso, o objeto sairá da posição 0 (ângulo de rotação) e irá para a posição 360, completando uma volta completa*/
+   
+}
+.vanilli{
+   position:absolute;
+}
+
+.vanilli img{
+   animation:roda 5s infinite linear;
+}
+.vanilli img:hover{
+   animation:roda 0.1s infinite linear;
+}
